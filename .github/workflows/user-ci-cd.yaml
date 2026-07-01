@@ -1,5 +1,5 @@
 ---
-name: catalogue-ci-cd
+name: roboshop-user-ci-cd
 on:
   workflow_call:
     inputs:
