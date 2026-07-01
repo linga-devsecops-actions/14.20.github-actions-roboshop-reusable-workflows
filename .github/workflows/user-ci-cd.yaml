@@ -67,7 +67,7 @@ jobs:
       - name: checkout deploy repo
         uses: actions/checkout@v5
         with:
-          repository: linga-devsecops-actions/14.26.github-actions-roboshop-catalogue-cd
+          repository: linga-devsecops-actions/14.30.github-actions-roboshop-user-cd
       - name: check the files
         run: ls -l
       - name: configure AWS Credentials
