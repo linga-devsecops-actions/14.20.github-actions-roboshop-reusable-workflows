@@ -109,10 +109,11 @@ jobs:
 
       - name: Deploy Shipping
         run: |
-          helm upgrade --install ${{ inputs.component }} \
-            -f values-dev.yaml \
-            --set deployment.imageVersion="$appVersion" .
+          helm upgrade --install ${{ inputs.component }} -n roboshop\
+            -f helm/values-dev.yaml \
+            --set deployment.imageVersion="$appVersion" helm
 
       - name: Verify Deployment
         run: |
           kubectl get pods -n roboshop
+

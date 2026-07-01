@@ -76,8 +76,8 @@ jobs:
         run: |
           helm upgrade --install ${{ inputs.component }} \
             -n roboshop \
-            -f values-dev.yaml \
-            --set deployment.imageVersion=$APP_VERSION .
+            -f helm/values-dev.yaml \
+            --set deployment.imageVersion=$APP_VERSION helm
 
       - name: Verify deployment
         run: |
