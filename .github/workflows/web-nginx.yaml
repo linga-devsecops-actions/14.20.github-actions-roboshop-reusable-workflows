@@ -22,7 +22,7 @@ on:
         required: true
 
 jobs:
-  frontend:
+  web:
     runs-on: self-hosted
 
     steps:
