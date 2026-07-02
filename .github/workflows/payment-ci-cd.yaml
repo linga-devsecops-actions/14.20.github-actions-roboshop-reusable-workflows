@@ -35,16 +35,24 @@ jobs:
 
       - name: Install Python
         run: |
-          sudo dnf install -y python3.11 gcc python3-devel unzip
+          sudo dnf install -y  python3.11 python3.11-pip gcc python3-devel
 
-      - name: Check Python Version
-        run: python3.11 --version
+      - name: check the files
+        run: ls -l
+        
+      - name: Display Workflow Inputs
+        run: |
+          echo "Project      : ${{ inputs.project }}"
+          echo "Component    : ${{ inputs.component }}"
+          echo "Environment  : ${{ inputs.environment }}"
+          echo "Application  : ${{ inputs.app_type }}"
 
       - name: Generate Application Version
         id: app-version
         run: |
           VERSION=$(date +%Y%m%d%H%M%S)
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Generated Version: $VERSION"
 
       - name: Install Python Dependencies
         run: |

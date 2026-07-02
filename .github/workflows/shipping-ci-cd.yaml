@@ -38,10 +38,10 @@ jobs:
         run: |
           sudo dnf install -y java-17-amazon-corretto-devel maven unzip
 
-      - name: Check Java Version
+      - name: Verify Java Installation
         run: java -version
 
-      - name: Check Maven Version
+      - name: Verify Maven Installation
         run: mvn -version
 
       - name: Generate Application Version
