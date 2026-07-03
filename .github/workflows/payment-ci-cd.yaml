@@ -35,7 +35,7 @@ jobs:
 
       - name: Install Python
         run: |
-          sudo dnf install -y python3-devel gcc gcc-c++ make
+          sudo dnf install -y python3.11 python3.11-devel gcc gcc-c++ make
 
       - name: check the files
         run: ls -l
